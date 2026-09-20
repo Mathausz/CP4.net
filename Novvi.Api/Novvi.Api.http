@@ -1,0 +1,58 @@
+@Novvi.Api_HostAddress = http://localhost:5236
+
+### Health check
+GET {{Novvi.Api_HostAddress}}/health
+Accept: application/json
+
+### Listar produtos
+GET {{Novvi.Api_HostAddress}}/api/produtos
+Accept: application/json
+
+### Criar produto
+POST {{Novvi.Api_HostAddress}}/api/produtos
+Content-Type: application/json
+
+{
+  "nome": "Camiseta Novvi",
+  "descricao": "Camiseta 100% algodão",
+  "preco": 79.90
+}
+
+### Criar funcionario
+POST {{Novvi.Api_HostAddress}}/api/funcionarios
+Content-Type: application/json
+
+{
+  "nome": "Maria Souza",
+  "salario": 3000
+}
+
+### Criar usuario
+POST {{Novvi.Api_HostAddress}}/api/usuarios
+Content-Type: application/json
+
+{
+  "nome": "João Silva",
+  "email": "joao@email.com",
+  "enderecos": [
+    { "cep": "12345678", "complemento": "Apto 12" }
+  ]
+}
+
+### Criar pedido (substitua os ids pelos retornados acima)
+POST {{Novvi.Api_HostAddress}}/api/pedidos
+Content-Type: application/json
+
+{
+  "idUsuario": "00000000-0000-0000-0000-000000000000",
+  "idFuncionario": "00000000-0000-0000-0000-000000000000",
+  "produtosIds": ["00000000-0000-0000-0000-000000000000"]
+}
+
+### Registrar pagamento do pedido (substitua o id do pedido)
+POST {{Novvi.Api_HostAddress}}/api/pedidos/00000000-0000-0000-0000-000000000000/pagamento
+Content-Type: application/json
+
+{
+  "tipoPagamento": 1
+}
