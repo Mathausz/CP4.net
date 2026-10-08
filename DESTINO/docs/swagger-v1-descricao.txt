@@ -1,0 +1,1 @@
+﻿API REST do domínio Novvi (usuários, funcionários, produtos e pedidos) - FIAP Challenge, Clean Architecture. ⚠️ ESTA VERSÃO ESTÁ DEPRECADA (v1.0): a listagem de pedidos devolve a lista inteira, sem paginação. Migre para a v2.0 (envelope paginado). A v1 continua no ar, apenas avisa.

@@ -1,0 +1,8 @@
+﻿Execução de teste para C:\Users\helll\Downloads\Novvi-CP5\Novvi\Novvi.Application.Tests\bin\Debug\net10.0\Novvi.Application.Tests.dll (.NETCoreApp,Version=v10.0)
+Execução de teste para C:\Users\helll\Downloads\Novvi-CP5\Novvi\Novvi.Domain.Tests\bin\Debug\net10.0\Novvi.Domain.Tests.dll (.NETCoreApp,Version=v10.0)
+1 arquivos de teste no total corresponderam ao padrão especificado.
+1 arquivos de teste no total corresponderam ao padrão especificado.
+
+Aprovado!  – Com falha:     0, Aprovado:    14, Ignorado:     0, Total:    14, Duração: 36 ms - Novvi.Domain.Tests.dll (net10.0)
+
+Aprovado!  – Com falha:     0, Aprovado:    16, Ignorado:     0, Total:    16, Duração: 111 ms - Novvi.Application.Tests.dll (net10.0)

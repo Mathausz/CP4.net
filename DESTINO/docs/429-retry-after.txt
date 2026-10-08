@@ -1,0 +1,8 @@
+﻿HTTP/1.1 429 Too Many Requests
+Content-Type: application/problem+json
+Date: Thu, 08 Oct 2026 23:42:38 GMT
+Server: Kestrel
+Retry-After: 60
+Transfer-Encoding: chunked
+
+{"type":"about:blank","title":"Muitas requisições","status":429,"detail":"Limite de requisições excedido. Tente novamente em 60 segundo(s).","instance":"/api/pedidos","traceId":"0HNP5IN63ERG9:00000001","retryAfterSeconds":60}

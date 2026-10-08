@@ -1,0 +1,1 @@
+﻿Evidencias geradas com o Oracle indisponivel: GET com dados (v1 array, v2 envelope, paginas 1 e 2, pagina vazia) e GET /health 200 apos o 429 nao puderam ser capturados nesta rodada. O /health devolveu 503 (database Unhealthy) e nunca 429, provando que nao entra no teto.

@@ -1,0 +1,12 @@
+﻿HTTP/1.1 500 Internal Server Error
+Content-Type: application/problem+json
+Date: Thu, 08 Oct 2026 23:42:24 GMT
+Server: Kestrel
+Cache-Control: no-cache,no-store
+Expires: -1
+Pragma: no-cache
+Transfer-Encoding: chunked
+api-supported-versions: 2.0
+api-deprecated-versions: 1.0
+
+{"type":"about:blank","title":"Erro interno do servidor","status":500,"detail":"Ocorreu um erro inesperado. Tente novamente mais tarde.","instance":"/api/pedidos","traceId":"0HNP5IN63ERFJ:00000001"}

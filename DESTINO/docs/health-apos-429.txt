@@ -1,0 +1,10 @@
+﻿HTTP/1.1 503 Service Unavailable
+Content-Type: application/json
+Date: Thu, 08 Oct 2026 23:42:39 GMT
+Server: Kestrel
+Cache-Control: no-store, no-cache
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Pragma: no-cache
+Transfer-Encoding: chunked
+
+{"status":"Unhealthy","duration":1125.7201,"checks":[{"name":"self","status":"Healthy","description":"API no ar","durationMs":1.2202,"error":null},{"name":"database","status":"Unhealthy","description":null,"durationMs":1120.5949,"error":null}]}

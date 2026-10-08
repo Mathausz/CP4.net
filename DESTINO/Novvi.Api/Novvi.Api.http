@@ -1,0 +1,102 @@
+@Novvi.Api_HostAddress = http://localhost:5236
+
+### Health check
+GET {{Novvi.Api_HostAddress}}/health
+Accept: application/json
+
+### Listar produtos
+GET {{Novvi.Api_HostAddress}}/api/produtos
+Accept: application/json
+
+### Criar produto
+POST {{Novvi.Api_HostAddress}}/api/produtos
+Content-Type: application/json
+
+{
+  "nome": "Camiseta Novvi",
+  "descricao": "Camiseta 100% algodão",
+  "preco": 79.90
+}
+
+### Criar funcionario
+POST {{Novvi.Api_HostAddress}}/api/funcionarios
+Content-Type: application/json
+
+{
+  "nome": "Maria Souza",
+  "salario": 3000
+}
+
+### Criar usuario
+POST {{Novvi.Api_HostAddress}}/api/usuarios
+Content-Type: application/json
+
+{
+  "nome": "João Silva",
+  "email": "joao@email.com",
+  "enderecos": [
+    { "cep": "12345678", "complemento": "Apto 12" }
+  ]
+}
+
+### Criar pedido (substitua os ids pelos retornados acima)
+POST {{Novvi.Api_HostAddress}}/api/pedidos
+Content-Type: application/json
+
+{
+  "idUsuario": "00000000-0000-0000-0000-000000000000",
+  "idFuncionario": "00000000-0000-0000-0000-000000000000",
+  "produtosIds": ["00000000-0000-0000-0000-000000000000"]
+}
+
+### Registrar pagamento do pedido (substitua o id do pedido)
+POST {{Novvi.Api_HostAddress}}/api/pedidos/00000000-0000-0000-0000-000000000000/pagamento
+Content-Type: application/json
+
+{
+  "tipoPagamento": 1
+}
+
+
+### ===== CP5: versionamento / paginação / rate limit =====
+
+### Pedidos sem versão -> cai na 2.0 (envelope paginado)
+GET {{Novvi.Api_HostAddress}}/api/pedidos
+
+### Pedidos v1 (deprecada) por query string -> lista
+GET {{Novvi.Api_HostAddress}}/api/pedidos?api-version=1.0
+
+### Pedidos v1 (deprecada) por header -> lista
+GET {{Novvi.Api_HostAddress}}/api/pedidos
+X-Api-Version: 1.0
+
+### Pedidos v1 / v2 por segmento de URL
+GET {{Novvi.Api_HostAddress}}/api/v1/pedidos
+
+###
+GET {{Novvi.Api_HostAddress}}/api/v2/pedidos?page=1&pageSize=2
+
+### Página 2 com pageSize pequeno
+GET {{Novvi.Api_HostAddress}}/api/pedidos?page=2&pageSize=2
+
+### 400: page=0
+GET {{Novvi.Api_HostAddress}}/api/pedidos?page=0
+
+### 400: pageSize=9999
+GET {{Novvi.Api_HostAddress}}/api/pedidos?pageSize=9999
+
+### 200 com items vazio: página enorme
+GET {{Novvi.Api_HostAddress}}/api/pedidos?page=999999
+
+### Rate limit: repita este POST 11x no mesmo minuto -> 429 + Retry-After
+POST {{Novvi.Api_HostAddress}}/api/pedidos
+Content-Type: application/json
+
+{
+  "idUsuario": "00000000-0000-0000-0000-000000000000",
+  "idFuncionario": "00000000-0000-0000-0000-000000000000",
+  "produtosIds": ["00000000-0000-0000-0000-000000000000"]
+}
+
+### Depois do 429, /health continua 200
+GET {{Novvi.Api_HostAddress}}/health

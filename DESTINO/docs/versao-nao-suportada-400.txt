@@ -1,0 +1,9 @@
+﻿HTTP/1.1 400 Bad Request
+Content-Type: application/problem+json
+Date: Thu, 08 Oct 2026 23:42:26 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+api-supported-versions: 2.0
+api-deprecated-versions: 1.0
+
+{"type":"https://docs.api-versioning.org/problems#unsupported","title":"Unsupported API version","status":400,"detail":"The HTTP resource that matches the request URI 'http://localhost:5236/api/pedidos' does not support the API version '9.9'.","traceId":"00-4b6648e5268130177b7d6b0cd9ad726c-bbed9576da1b1678-00"}

@@ -1,0 +1,12 @@
+﻿HTTP/1.1 400 Bad Request
+Content-Type: application/problem+json
+Date: Thu, 08 Oct 2026 23:42:27 GMT
+Server: Kestrel
+Cache-Control: no-cache,no-store
+Expires: -1
+Pragma: no-cache
+Transfer-Encoding: chunked
+api-supported-versions: 2.0
+api-deprecated-versions: 1.0
+
+{"type":"about:blank","title":"Parâmetros de paginação inválidos","status":400,"detail":"O parâmetro 'page' deve ser um inteiro maior ou igual a 1 (recebido: 0).","instance":"/api/pedidos","traceId":"0HNP5IN63ERFP:00000001"}
